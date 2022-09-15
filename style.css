@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    background-image: url(./img/ice.jpg);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    width: 400px;
+    height: 140px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    border-style: ridge;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.team {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 28px;
+    font-family: 'Press Start 2P';
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    font-family: 'digital-7';
+}
+
+.score img {
+    height: 60px;
+    width: 60px;
+}
+
+.restart-game {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'Press Start 2P';
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.restart-game:hover {
+    text-decoration: underline;
+}
+
+.player-inactive {
+    opacity: 0.3;
+}
+
+.horizontal-line {
+    height: 10px;
+    background-color: rgba(0, 0, 255, 0.4);
+    width: 330px;
+    position: absolute;
+    transform: scaleX(0);
+    transition: transform 225ms ease-in-out;
+    z-index: 1;
+}
+
+.make-vertical {
+    transform: rotate(90deg) scaleX(0);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    max-width: 399px;
+}
+
+td {
+    position: relative;
+    width: 133px;
+    height: 133px;
+    border: 5px dashed rgba(255, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+tr:first-child td {
+    border-top: 0;
+}
+
+tr:last-child td {
+    border-bottom: 0;
+}
+
+tr td:first-child {
+    border-left: 0;
+}
+
+tr td:last-child {
+    border-right: 0;
+}
+
+.shapes {
+    position: absolute;
+    height: 75px;
+    top: 2rem;
+    right: 1.6rem;
+}
+
+.d-none {
+    display: none;
+}
+
+.footer-icon {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.game-over {
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    background-image: url(./img/win.jpg);
+    background-size: cover;
+    background-position: center;
+    left: 15%;
+    top: 10%;
+    border-radius: 5px;
+    border-style: outset;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+.game-over-child {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.winner-text {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-family: 'Press Start 2P';
+    font-size: 30px;
+    color: rgb(210, 69, 30);
+    text-decoration: underline;
+}
+
+.endscreen-btn-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.endscreen-btn {
+    background-color: rgb(8, 170, 250);
+    border-style: outset;
+    border-color: rgb(8, 170, 250);
+    color: white;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    font-family: 'Press Start 2P';
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.endscreen-btn:hover {
+    background-color: rgb(8, 137, 250);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@media(max-width: 860px) {
+
+    .winner-text {
+        font-size: 20px;
+    }
+}
+
+
+@media(max-width: 700px) {
+
+    .winner-text {
+        font-size: 16px;
+    }
+
+    .endscreen-btn {
+        width: 100px;
+        height: 40px;
+        font-size: 12px;
+    }
+}
+
+
+@media(max-width: 450px) {
+
+    .scoreboard {
+        width: 300px;
+        margin-bottom: 50px;
+    }
+
+    .team {
+        font-size: 18px;
+    }
+
+    .score {
+        font-size: 60px;
+    }
+
+    .score img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .shapes {
+        height: 50px;
+    }
+
+    td {
+        width: 100px;
+        height: 100px;
+    }
+
+    .horizontal-line {
+        width: 300px;
+        left: -95% !important;
+    }
+
+    .game-over {
+        height: 70%;
+        top: 19%;
+    }
+
+    .winner-text {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 340px) {
+
+    .scoreboard {
+        width: 230px;
+        height: 120px;
+        margin-bottom: 80px;
+    }
+
+    .team {
+        font-size: 12px;
+    }
+
+    td {
+        height: 75px;
+        width: 75px;
+    }
+
+    .shapes {
+        height: 40px;
+        right: 1.1rem;
+        top: 1rem;
+    }
+
+    .horizontal-line {
+        width: 230px;
+        left: -97% !important;
+        top: 35%;
+    }
+
+    .game-over {
+        height: 60%;
+        width: 80%;
+        left: 10%;
+    }
+
+    .winner-text {
+        font-size: 10px;
+    }
+
+    .endscreen-btn-container {
+        padding: 10px;
+    }
+
+    .endscreen-btn {
+        width: 70px;
+        height: 35px;
+        font-size: 8px;
+    }
+}

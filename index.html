@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic tac toe</title>
+    <link rel="shortcut icon" href="./img/hockey-sticks.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="scoreboard">
+        <div class="team">
+            <span>HOME</span>
+            <span>vs</span>
+            <span>VISITOR</span>
+        </div>
+        <div class="score">
+            <img id="player-1" src="./img/puck.png">
+            <span id="home">0</span>
+            <span>:</span>
+            <span id="visitor">0</span>
+            <img id="player-2" src="./img/hockey-sticks.png">
+        </div>
+        <div class="restart-game" onclick="restartGame()">Restart Game</div>
+    </div>
+
+    <table>
+        <tr>
+            <td onclick="fillFields(0)">
+                <img id="puck-0" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-0" class="shapes d-none" src="./img/hockey-sticks.png">
+            </td>
+            <td onclick="fillFields(1)">
+                <img id="puck-1" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-1" class="shapes d-none" src="./img/hockey-sticks.png">
+                <div id="line-1" class="horizontal-line" style="left: -70%;"></div>
+            </td>
+            <td onclick="fillFields(2)">
+                <img id="puck-2" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-2" class="shapes d-none" src="./img/hockey-sticks.png">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="fillFields(3)">
+                <img id="puck-3" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-3" class="shapes d-none" src="./img/hockey-sticks.png">
+                <div id="line-4" class="horizontal-line make-vertical" style="left: -70%;"></div>
+            </td>
+            <td onclick="fillFields(4)">
+                <img id="puck-4" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-4" class="shapes d-none" src="./img/hockey-sticks.png">
+                <div id="line-2" class="horizontal-line" style="left: -70%;">
+                </div>
+                <div id="line-5" class="horizontal-line make-vertical" style="left: -70%;">
+                </div>
+                <div id="line-7" class="horizontal-line" style="left: -70%; transform: rotate(45deg) scaleX(0.0);">
+                </div>
+                <div id="line-8" class="horizontal-line" style="left: -70%; transform: rotate(-45deg) scaleX(0.0);">
+                </div>
+            </td>
+            <td onclick="fillFields(5)">
+                <img id="puck-5" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-5" class="shapes d-none" src="./img/hockey-sticks.png">
+                <div id="line-6" class="horizontal-line make-vertical" style="left: -70%;"></div>
+            </td>
+        </tr>
+        <tr>
+            <td onclick="fillFields(6)">
+                <img id="puck-6" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-6" class="shapes d-none" src="./img/hockey-sticks.png">
+            </td>
+            <td onclick="fillFields(7)">
+                <img id="puck-7" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-7" class="shapes d-none" src="./img/hockey-sticks.png">
+                <div id="line-3" class="horizontal-line" style="left: -70%;"></div>
+            </td>
+            <td onclick="fillFields(8)">
+                <img id="puck-8" class="shapes d-none" src="./img/puck.png">
+                <img id="stick-8" class="shapes d-none" src="./img/hockey-sticks.png">
+            </td>
+        </tr>
+    </table>
+    <div class="footer-icon">icons by <a target="_blank" href="https://icons8.com">Icons8</a></div>
+    <div class="game-over d-none" id="game-over">
+        <div class="game-over-child">
+            <div class="winner-text" id="winner-text">PLAYER X WIN!
+            </div>
+            <div class="endscreen-btn-container">
+                <button class="endscreen-btn" onclick="restartGame()">Restart</button>
+                <button class="endscreen-btn" onclick="NextRound()">Next Round</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
