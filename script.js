@@ -172,6 +172,7 @@ function resetLines() {
     }
 }
 
+
 function resetFields() {
     for (let i = 0; i < 9; i++) {
         document.getElementById(`puck-${i}`).classList.add('d-none');
